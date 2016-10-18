@@ -6,6 +6,10 @@
         
         $scope.users = userFactory;
 
-        
+        $scope.searchUser = function () {
+            userFactory;
+        };
+
     }
+
 })();
