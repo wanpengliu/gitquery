@@ -2,9 +2,9 @@
     var mod = angular.module("user-module");
 
     mod.controller('UserController', usrController);
-    function usrController($scope) {
+    function usrController($scope, userFactory) {
         
-        $scope.users=[{"id":1, "name":"john"},{"id":2, "name":"wanpeng"}];
+        $scope.users = userFactory;
 
         
     }
