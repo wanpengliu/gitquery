@@ -14,36 +14,25 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body ng-controller="jqController">
+<body>
 
+    <a href="#/user">User</a>
+    <a href="#/repo">Repo</a>
 
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+  <div ng-view></div>
+    
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
 
-
-    <ul>
-        <li ng-repeat="repo in repositories">{{repo}}</li>
-    </ul>
-
-    <input type="text" ng-model="newRepo" />
-    <button ng-click="new()">NEW</button>
-    <p>Name <input type="text" ng-model="name" /></p>
-    <h1>hello {{repositories}}</h1>
-    <input type="text" class="form-control input-lg" id="inputquery" placeholder="Search Most Popular Projects In Java">
-    <div></div>
-    <button class="btn btn-primary" onclick="searchGitHub()">Search</button>
-    <ul id="result"></ul>
-
-
-
-    <h1>{{myText}}</h1>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/gitqueryController.js"></script>
+
+    <script src="js/user/user-module.js"></script>
+    <script src="js/repository/repository-module.js"></script>
+
+    <script src="js/user/user-module-controller.js"></script>
+    <script src="js/repository/repository-module-controller.js"></script>
+    
+    
+    
 </body>
 </html>
