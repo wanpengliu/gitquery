@@ -1,4 +1,4 @@
 ﻿(function () {
     //register the app
-   ar mod = angular.module('jqApp', []);
+  var mod = angular.module('jqApp', []);
 })(); 
