@@ -1,5 +1,8 @@
 ﻿<div ng-controller="RepositoryController">
 
+    <input type="text" class="input-lg" ng-model="reposearch" placeholder="Search most popular Java Project" /><br />
+    <button ng-click="searchRepo()" class="btn btn-primary">Search</button>
+
     <ul>
         <li ng-repeat=" repo in repos"> {{repo.id}} {{repo.name}}</li>
     </ul>

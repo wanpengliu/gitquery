@@ -2,10 +2,21 @@
     var mod = angular.module('user-module');
     mod.factory('userFactory', userFactory);
 
-    function userFactory() {
-        var users = [{ "id": 1, "name": "john" }, { "id": 2, "name": "wanpeng" }];
-        return users;
+    function userFactory($http) {
+
+        return {
+
+            query: function (repo) {
+                console.log("user factory - user search for " + repo);
+                var url = "https://api.github.com/search/repositories?q="
+               + repo + "+language:assembly&sort=stars&order=desc";
+                return $http.get(url);
+            }
+        }
         
     }
+
+    // https://api.github.com/search/users?q=repos:1&location:iceland
+    // 
 
 })();
