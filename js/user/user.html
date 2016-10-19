@@ -1,11 +1,12 @@
 ﻿
 <div ng-controller="UserController">
-    <input type="text" class="form-control input-lg" ng-model="userquery" placeholder="Search most popular Java Project" />
-    <button ng-disabled="isLoading" ng-click="searchUser()" class="btn btn-primary btn-lg">Search</button>
+    <input type="text" class="form-control input-lg" ng-model="userquery" placeholder="Search popular users by location" />
+    <button  ng-click="showP=true; searchUser()" class="btn btn-primary btn-lg">Search</button>
     
     <ul>
-        <h2 ng-show="{{users.total_count}}"> Total number of records received {{users.total_count}}  </h2>
-        <li ng-repeat=" item in users.items"> {{item.id}} {{item.name}} <a href={{item.owner.url}}>Visit Project</a> </li>
+        
+        <p ng-show="showP"> There are {{users.total_count}} github user from {{userquery}} </p>
+        <li ng-repeat=" item in users.items"> {{item.id}} {{item.score}} <a href={{item.url}}>Visit Project</a> </li>
     </ul>
 </div>
 <br />
