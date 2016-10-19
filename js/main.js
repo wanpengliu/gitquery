@@ -1,10 +1,5 @@
 console.log("hello world!");
 
-
-
-
-
-
 function searchGitHubBackup() {
     var query = document.getElementById("inputquery").value;
     var url = "https://api.github.com/search/repositories?q="+query+"+language:assembly&sort=stars&order=desc";

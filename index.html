@@ -1,40 +1,123 @@
 ﻿<!doctype html>
-<html class="no-js" lang="" ng-app="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">        <!-- Place favicon.ico in the root directory -->
+<html class="no-js" lang="" ng-app="jqApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">gitQuery</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right " role="form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">gitQuery!</button>
+                </form>
+                <a class="navbar-text navbar-right " href="#/user">User</a>
+                <a class="navbar-text navbar-right " href="#/repo">Repo</a>
 
-        <link href="css/bootstrap.css" rel="stylesheet" /> 
-        <link href="css/bootstrap-theme.css" rel="stylesheet" />
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-     
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <svg width="800" height="100">
+                <circle cx="550" cy="50" r="30"
+                        fill="black" stroke="red" stroke-width="30"
+                        fill-opacity=".5"
+                        id="myCircle"
+                        onclick="alternateColor();" />
+            </svg>
 
-        <p>Name <input type="text"  ng-model="name" /></p>
-        <h1>hello {{name}}</h1>
+            <div class="col-md-4"></div>
+            <div class="col-md-4" ng-view></div>
+            <div class="col-md-4"></div>
+        </div>
+       
+    </div>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        <h2>By Location</h2>
+                        <button ng-click="geolocateUser()" class="btn btn-primary">Lookup Your Location</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Trending Repos</h2>
+                    <button ng-click="geolocateUser()" class="btn btn-primary">Get Trending Repos</button>
+                </div>
+                <div class="col-md-4">
+                    <h2>Trending Languages</h2>
+                    <button ng-click="geolocateUser()" class="btn btn-primary">Get Trending Languages</button>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; gitQuery 2016</p>
+            </footer>
+        </div>
 
-        <input type="text" class="form-control input-lg" id="inputquery" placeholder="Search Most Popular Projects In Java"> 
-        <div></div>
-        <button class="btn btn-primary" onclick="searchGitHub()" >Search</button>
-        <ul id="result"></ul>
 
-        <div ng-init="repositories=[{name:test1, url:test1url1}, {name:test2, url:testurl2}]"></div>
-        <ul>
-            <li ng-repeat="name in repositories">{{name.name}}</li>
-        </ul>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-route.js"></script>
+
+
+        <script src="js/repository/repository-module.js"></script>
+        <script src="js/repository/repoFactory.js"></script>
+        <script src="js/repository/repository-module-controller.js"></script>
+
+        <script src="js/user/user-module.js"></script>
+        <script src="js/user/userFactory.js"></script>
+        <script src="js/user/user-module-controller.js"></script>
+        
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/app/app.js"></script>
+        
+        <script>
+            function alternateColor() {
+                var circle = document.getElementById("myCircle");
+
+                if (circle.getAttribute("fill") == "black") {
+                    circle.setAttribute("fill", "red");
+                } else {
+                    circle.setAttribute("fill", "black");
+                }
+                if (circle.getAttribute("stroke") == "black") {
+                    circle.setAttribute("stroke", "red");
+                } else {
+                    circle.setAttribute("stroke", "black");
+                }
+            }
+        </script>
+
+
+
+</body>
 </html>
