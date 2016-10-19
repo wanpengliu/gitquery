@@ -1,8 +1,10 @@
-﻿<div ng-controller="UserController">
-    <input type="text" class="input-lg" ng-model="userquery" placeholder="Search most popular Java Project" /><br/>
+﻿
+<div ng-controller="UserController">
+    <input type="text" class="input-lg" ng-model="userquery" placeholder="Search most popular Java Project" />
     <button ng-click="searchUser()" class="btn btn-primary">Search</button>
     <ul>
         <li ng-repeat=" user in users"> {{user.id}} {{user.name}}</li>
     </ul>
-
 </div>
+<br />
+
