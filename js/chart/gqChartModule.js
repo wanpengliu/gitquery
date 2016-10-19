@@ -1,3 +1,4 @@
-(function() {
-    angular.module('gqChart', ['chart.js']);
+(function () {
+    angular
+        .module('gqChart', ['chart.js']);
 })();
