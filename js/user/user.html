@@ -1,7 +1,7 @@
 ﻿
 <div ng-controller="UserController">
-    <input type="text" class="input-lg" ng-model="userquery" placeholder="Search most popular Java Project" />
-    <button ng-disabled="isLoading" ng-click="searchUser()" class="btn btn-primary">Search</button>
+    <input type="text" class="form-control input-lg" ng-model="userquery" placeholder="Search most popular Java Project" />
+    <button ng-disabled="isLoading" ng-click="searchUser()" class="btn btn-primary btn-lg">Search</button>
     
     <ul>
         <h2 ng-show="{{users.total_count}}"> Total number of records received {{users.total_count}}  </h2>
