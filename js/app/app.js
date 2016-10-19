@@ -20,11 +20,11 @@
             controller: 'RepositoryController',
             templateUrl: 'js/repository/repo.html'
         })
-        .when('/chart', {
-            controller: 'gqChartController',
-            controllerAs: 'gqchart',
-            templateUrl: 'js/chart/chart.html'
-        });
-        //.otherwise({redirectTo: '/'});
+        // .when('/chart', {
+        //     controller: 'gqChartController',
+        //     controllerAs: 'gqchart',
+        //     templateUrl: 'js/chart/chart.html'
+        // });
+        .otherwise({redirectTo: '/'});
     });
 })(); 
