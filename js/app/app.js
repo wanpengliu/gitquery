@@ -3,7 +3,7 @@
 (function () {
     //register the app
 
-    var mod = angular.module('jqApp', ['ngRoute','user-module', 'repo-module']);
+    var mod = angular.module('jqApp', ['ngRoute','user-module', 'repo-module', 'gqChart']);
     mod.config(function ($routeProvider) {
         $routeProvider
         .when("/", {
@@ -19,6 +19,11 @@
         .when("/repo", {
             controller: 'RepositoryController',
             templateUrl: 'js/repository/repo.html'
+        })
+        .when('/chart', {
+            controller: 'gqChartController',
+            controllerAs: 'gqchart',
+            templateUrl: 'js/chart/chart.html'
         });
         //.otherwise({redirectTo: '/'});
     });

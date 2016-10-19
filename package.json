@@ -1,0 +1,27 @@
+{
+  "name": "gitquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "plugins.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "angular-chart.js": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wanpengliu/gitquery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanpengliu/gitquery/issues"
+  },
+  "homepage": "https://github.com/wanpengliu/gitquery"
+}
