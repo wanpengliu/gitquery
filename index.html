@@ -52,7 +52,7 @@
                         id="myCircle"
                         onclick="alternateColor();" />
             </svg>
-            <h1>message to chris, rest service has not been implemented. button does not work</h1>
+
             <div class="col-md-4"></div>
             <div class="col-md-4" ng-view></div>
             <div class="col-md-4"></div>
@@ -86,16 +86,20 @@
 
         <script src="js/angular.js"></script>
         <script src="js/angular-route.js"></script>
-        <script src="js/app/app.js"></script>
+
+
+        <script src="js/repository/repository-module.js"></script>
+        <script src="js/repository/repoFactory.js"></script>
+        <script src="js/repository/repository-module-controller.js"></script>
 
         <script src="js/user/user-module.js"></script>
-        <script src="js/repository/repository-module.js"></script>
         <script src="js/user/userFactory.js"></script>
         <script src="js/user/user-module-controller.js"></script>
-        <script src="js/repository/repository-module-controller.js"></script>
+        
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/app/app.js"></script>
+        
         <script>
             var colors = ["orange", "black", "yellow", "red", "blue", "fuchsia"];
             var curColor = 0;

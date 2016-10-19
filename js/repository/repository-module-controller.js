@@ -2,12 +2,18 @@
     var mod = angular.module("repo-module");
 
     mod.controller('RepositoryController', repositoryController);
-    function repositoryController($scope) {
+    function repositoryController($scope, repoFactory) {
 
-        $scope.repos = [{ "id": 1, "name": "repo1" }, { "id": 2, "name": "repo2" }];
+        
 
         $scope.searchRepo = function () {
+            console.log("repo search");
+            repoFactory.query($scope.reposearch).then(display);
 
+        }
+
+        function display(response) {
+            $scope.repos = response.data;
         }
     }
 

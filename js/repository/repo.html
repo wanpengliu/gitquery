@@ -4,7 +4,9 @@
     <button ng-click="searchRepo()" class="btn btn-primary">Search</button>
 
     <ul>
-        <li ng-repeat=" repo in repos"> {{repo.id}} {{repo.name}}</li>
+        <h2 ng-show="{{repos.total_count}}"> Total number of repos found {{repos.total_count}}  </h2>
+        <li ng-repeat=" item in repos.items"> {{item.id}} {{item.name}}  <a href={{item.owner.html_url}}>Visit Project</a></li>
     </ul>
+
 
 </div>
