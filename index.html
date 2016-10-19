@@ -46,8 +46,8 @@
     <div class="jumbotron">
         <div class="container">
             <svg width="800" height="100">
-                <circle cx="550" cy="50" r="40"
-                        fill="orange" stroke="black" stroke-width="10"
+                <circle cx="550" cy="50" r="30"
+                        fill="black" stroke="red" stroke-width="30"
                         fill-opacity=".5"
                         id="myCircle"
                         onclick="alternateColor();" />
@@ -101,13 +101,19 @@
     <script src="js/app/app.js"></script>
         
         <script>
-            var colors = ["orange", "black", "yellow", "red", "blue", "fuchsia"];
-            var curColor = 0;
             function alternateColor() {
                 var circle = document.getElementById("myCircle");
-                curColor = (curColor + 1) % colors.length;
-                circle.setAttribute("fill", colors[curColor]);
-                circle.setAttribute("stroke", colors[curColor]);
+
+                if (circle.getAttribute("fill") == "black") {
+                    circle.setAttribute("fill", "red");
+                } else {
+                    circle.setAttribute("fill", "black");
+                }
+                if (circle.getAttribute("stroke") == "black") {
+                    circle.setAttribute("stroke", "red");
+                } else {
+                    circle.setAttribute("stroke", "black");
+                }
             }
         </script>
 
