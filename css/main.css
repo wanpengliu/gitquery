@@ -95,6 +95,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.gq-fade.ng-enter{
+    animation: 3s  flipInX;
+}
 
 
 
