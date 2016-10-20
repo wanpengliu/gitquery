@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body>
+<body ng-init="user = {username:'bla'}">
+    <input type="text" ng-model="user.username" />{{user.username}}
+    <cu-directive input-username="user"></cu-directive>
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -105,7 +108,8 @@
         <script src="js/user/userdetails-module-controller.js"></script>
         <script src="js/user/user-module-controller.js"></script>
         
-
+        <script src="js/directive/custom-module.js"></script>
+        <script src="js/directive/custom-module-directive.js"></script>
 
         <script src="js/chart/gqChartModule.js"></script>
         <script src="js/chart/BubbleController.js"></script>

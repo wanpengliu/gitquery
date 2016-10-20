@@ -3,7 +3,7 @@
 (function () {
     //register the app
 
-    var mod = angular.module('jqApp', ['ngRoute', 'user-module', 'repo-module', 'gqChart', 'userdetails-module']);
+    var mod = angular.module('jqApp', ['ngRoute', 'custom-module', 'user-module', 'repo-module', 'gqChart', 'userdetails-module']);
     mod.config(function ($routeProvider) {
         $routeProvider
         .when("/", {
