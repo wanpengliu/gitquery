@@ -3,9 +3,10 @@
     <button ng-click="ud.searchUserByName()" class="btn btn-primary btn-lg">Search</button>
 
     <form>
-        <p>  Userid: {{ud.person.items[0].id}} </p></br>
-        <p> Username: {{ud.person.items[0].login}} </p></br>
-        <img src={{ud.person.items[0].avatar_url}} style="width:304px;height:228px;">
+
+        <p ng-show="ud.person.items[0].id">  Userid: {{ud.person.items[0].id}} </p></br>
+        <p ng-show="ud.person.items[0].login"> Username: {{ud.person.items[0].login}} </p></br>
+        <img ng-show="ud.person.items[0].avatar_url" src={{ud.person.items[0].avatar_url}} style="width:304px;height:228px;">
         <ul>
             <li ng-repeat="repo in repos"></li>
         </ul>
