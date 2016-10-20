@@ -1,0 +1,16 @@
+﻿<div>
+    <input type="text" class="form-control input-lg" ng-model="ud.userqueryByName" placeholder="Search by username" />
+    <button ng-click="ud.searchUserByName()" class="btn btn-primary btn-lg">Search</button>
+
+    <form>
+        <p>  Userid: {{ud.person.items[0].id}} </p></br>
+        <p> Username: {{ud.person.items[0].login}} </p></br>
+        <img src={{ud.person.items[0].avatar_url}} style="width:304px;height:228px;">
+        <ul>
+            <li ng-repeat="repo in repos"></li>
+        </ul>
+        
+    </form>
+</div>
+<br />
+
