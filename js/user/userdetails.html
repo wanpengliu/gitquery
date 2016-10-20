@@ -1,17 +1,25 @@
 ﻿<div>
-    <input type="text" class="form-control input-lg" ng-model="ud.userqueryByName" placeholder="Search by username" />
-    <button ng-click="ud.searchUserByName()" class="btn btn-primary btn-lg">Search</button>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" ng-model="ud.userqueryByName" placeholder="Search by username" />
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-4 col-lg-2">
+                <button ng-click="ud.searchUserByName()" class="btn btn-primary btn-lg">Search</button>
+            </div>
 
-    <form>
+        </div>
+        </div>
+        <form>
 
-        <p ng-show="ud.person.items[0].id">  Userid: {{ud.person.items[0].id}} </p></br>
-        <p ng-show="ud.person.items[0].login"> Username: {{ud.person.items[0].login}} </p></br>
-        <img ng-show="ud.person.items[0].avatar_url" src={{ud.person.items[0].avatar_url}} style="width:304px;height:228px;">
-        <ul>
-            <li ng-repeat="repo in repos"></li>
-        </ul>
-        
-    </form>
-</div>
+            <p ng-show="ud.person.items[0].id">  Userid: {{ud.person.items[0].id}} </p></br>
+            <p ng-show="ud.person.items[0].login"> Username: {{ud.person.items[0].login}} </p></br>
+            <img ng-show="ud.person.items[0].avatar_url" src={{ud.person.items[0].avatar_url}} style="width:304px;height:228px;">
+            <ul>
+                <li ng-repeat="repo in repos"></li>
+            </ul>
+
+        </form>
+    </div>
 <br />
 

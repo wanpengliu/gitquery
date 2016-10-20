@@ -1,7 +1,15 @@
 ﻿<div ng-controller="RepositoryController">
 
-    <input type="text" class="form-control input-lg" ng-model="reposearch" placeholder="Search most popular Java Project" />
-    <button ng-click="searchRepo()" class="btn btn-primary btn-lg">Search</button>
+    <div class="row">
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" ng-model="reposearch" placeholder="Search most popular Java Project" />
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-4 col-lg-2">
+                <button ng-click="searchRepo()" class="btn btn-primary btn-lg">Search</button>
+            </div>
+        </div>
+    </div>
 
     <ul>
         <h2 ng-show="{{repos.total_count}}"> Total number of repos found {{repos.total_count}}  </h2>
